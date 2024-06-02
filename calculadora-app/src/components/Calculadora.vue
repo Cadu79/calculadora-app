@@ -71,26 +71,26 @@ const handleDecimal = () => {
 
 <template>
   <div class="calculadora">
-    <div class="display">0</div>
-    <div class="botao">C</div>
+    <div class="display">{{ display }}</div>
+    <div class="botao" @click="clear">C</div>
     <div class="botao">+/-</div>
     <div class="botao">%</div>
-    <div class="botao operadores">÷</div>
-    <div class="botao">7</div>
-    <div class="botao">8</div>
-    <div class="botao">9</div>
-    <div class="botao operadores">X</div>
-    <div class="botao">4</div>
-    <div class="botao">5</div>
-    <div class="botao">6</div>
-    <div class="botao operadores">-</div>
-    <div class="botao">1</div>
-    <div class="botao">2</div>
-    <div class="botao">3</div>
-    <div class="botao operadores">+</div>
-    <div class="botao zero">0</div>
-    <div class="botao">.</div>
-    <div class="botao operadores">=</div>
+    <div class="botao operadores" @click="chooseOperator('÷')">÷</div>
+    <div class="botao" @click="appendNumber('7')">7</div>
+    <div class="botao" @click="appendNumber('8')">8</div>
+    <div class="botao" @click="appendNumber('9')">9</div>
+    <div class="botao operadores" @click="chooseOperator('X')">X</div>
+    <div class="botao" @click="appendNumber('4')">4</div>
+    <div class="botao" @click="appendNumber('5')">5</div>
+    <div class="botao" @click="appendNumber('6')">6</div>
+    <div class="botao operadores" @click="chooseOperator('-')">-</div>
+    <div class="botao" @click="appendNumber('1')">1</div>
+    <div class="botao" @click="appendNumber('2')">2</div>
+    <div class="botao" @click="appendNumber('3')">3</div>
+    <div class="botao operadores" @click="chooseOperator('+')">+</div>
+    <div class="botao zero" @click="appendNumber('0')">0</div>
+    <div class="botao" @click="handleDecimal">.</div>
+    <div class="botao operadores" @click="handleEquals">=</div>
   </div>
 </template>
 
