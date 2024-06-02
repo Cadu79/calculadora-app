@@ -73,13 +73,13 @@ const handleDecimal = () => {
   <div class="calculadora">
     <div class="display">{{ display }}</div>
     <div class="botao" @click="clear">C</div>
+    <div class="botao">CE</div>
     <div class="botao">+/-</div>
-    <div class="botao">%</div>
     <div class="botao operadores" @click="chooseOperator('÷')">÷</div>
     <div class="botao" @click="appendNumber('7')">7</div>
     <div class="botao" @click="appendNumber('8')">8</div>
     <div class="botao" @click="appendNumber('9')">9</div>
-    <div class="botao operadores" @click="chooseOperator('X')">X</div>
+    <div class="botao operadores" @click="chooseOperator('X')">x</div>
     <div class="botao" @click="appendNumber('4')">4</div>
     <div class="botao" @click="appendNumber('5')">5</div>
     <div class="botao" @click="appendNumber('6')">6</div>
