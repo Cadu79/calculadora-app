@@ -1,5 +1,72 @@
 <script setup>
-// Nenhum código JavaScript no script setup, o que está correto se não houver lógica a ser adicionada.
+import { ref } from 'vue';
+
+const display = ref('0');
+const currentInput = ref('');
+const operator = ref(null);
+const previousValue = ref(null);
+
+const clear = () => {
+  display.value = '0';
+  currentInput.value = '';
+  operator.value = null;
+  previousValue.value = null;
+};
+
+const appendNumber = (number) => {
+  if (currentInput.value.includes('.') && number === '.') return;
+  currentInput.value = currentInput.value === '' ? number : currentInput.value + number;
+  display.value = currentInput.value;
+};
+
+const chooseOperator = (op) => {
+  if (currentInput.value === '') return;
+  if (previousValue.value !== null) {
+    compute();
+  }
+  operator.value = op;
+  previousValue.value = currentInput.value;
+  currentInput.value = '';
+};
+
+const compute = () => {
+  let result;
+  const prev = parseFloat(previousValue.value);
+  const current = parseFloat(currentInput.value);
+  if (isNaN(prev) || isNaN(current)) return;
+
+  switch (operator.value) {
+    case '+':
+      result = prev + current;
+      break;
+    case '-':
+      result = prev - current;
+      break;
+    case 'X':
+      result = prev * current;
+      break;
+    case '÷':
+      result = prev / current;
+      break;
+    default:
+      return;
+  }
+  currentInput.value = result.toString();
+  display.value = result.toString();
+  operator.value = null;
+  previousValue.value = null;
+};
+
+const handleEquals = () => {
+  compute();
+};
+
+const handleDecimal = () => {
+  if (!currentInput.value.includes('.')) {
+    currentInput.value += '.';
+  }
+  display.value = currentInput.value;
+};
 </script>
 
 <template>
