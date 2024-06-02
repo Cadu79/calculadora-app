@@ -122,6 +122,10 @@ const handleDecimal = () => {
 .botao {
   background-color: #f2f2f2;
   border: 1px solid #999;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .operadores {
