@@ -95,14 +95,18 @@ const handleDecimal = () => {
 </template>
 
 <style scoped>
-
 .calculadora {
-  font-size: 40px;
+  font-size: 30px; /* Ajustei o tamanho da fonte para melhor proporção */
   display: grid;
   width: 350px;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(50px, auto);
+  gap: 5px; /* Adiciona espaço entre os botões */
+  background-color: #222; /* Fundo para a calculadora */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
 }
 
 .display {
@@ -112,7 +116,10 @@ const handleDecimal = () => {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra interna */
 }
 
 .zero {
@@ -126,10 +133,33 @@ const handleDecimal = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.botao:hover {
+  background-color: #e0e0e0;
+}
+
+.botao:active {
+  background-color: #d0d0d0;
+  transform: scale(0.95);
 }
 
 .operadores {
   background-color: orange;
   color: white;
 }
+
+.operadores:hover {
+  background-color: #e69500;
+}
+
+.operadores:active {
+  background-color: #cc8400;
+  transform: scale(0.95);
+}
+
 </style>
